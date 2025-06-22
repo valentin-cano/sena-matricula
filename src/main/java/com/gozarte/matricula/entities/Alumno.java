@@ -1,38 +1,76 @@
 package com.gozarte.matricula.entities;
 
-import org.antlr.v4.runtime.misc.NotNull;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-
 import jakarta.persistence.*;
-import lombok.Data;
 
 @Entity
 @Table(name = "alumnos")
-@Data
 public class Alumno {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @NotNull
     @Column(length = 20)
     private String nombre;
 
-    @NotNull
     @Column(length = 30)
     private String apellidos;
 
-    @NotNull
     @Column(length = 20)
     private String numeroDocumento;
 
-    @NotNull
     @Column(length = 10)
     private String fechaNacimiento;
 
-    @NotNull
     @Column(length = 15)
 private String telefono;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellidos() {
+        return apellidos;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+
+    public String getNumeroDocumento() {
+        return numeroDocumento;
+    }
+
+    public void setNumeroDocumento(String numeroDocumento) {
+        this.numeroDocumento = numeroDocumento;
+    }
+
+    public String getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public void setFechaNacimiento(String fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
 
 }

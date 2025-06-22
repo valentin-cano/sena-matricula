@@ -7,13 +7,12 @@
 </head>
 <body>
 
-    <!-- Navbar -->
     <div th:replace="fragments/navbar :: barra-navegacion"></div>
 
-    <!-- Contenido principal -->
     <div class="container mt-5">
         <h1 class="mb-4">📚 Crear Materia</h1>
-        <form id="formMateria">
+        <form id="formMateria" action="/materia/guardar" method="post">
+
             <div class="mb-3">
                 <label for="nombre" class="form-label">Nombre de la materia</label>
                 <input type="text" class="form-control" id="nombre" name="nombre" required>
