@@ -1,0 +1,59 @@
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('lunes', '9:00 a.m.');
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('lunes', '10:00 a.m.');
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('lunes', '11:00 a.m.');
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('lunes', '12:00 m.');
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('lunes', '1:00 p.m.');
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('lunes', '2:00 p.m.');
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('lunes', '3:00 p.m.');
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('lunes', '4:00 p.m.');
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('lunes', '5:00 p.m.');
+
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('martes', '9:00 a.m.');
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('martes', '10:00 a.m.');
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('martes', '11:00 a.m.');
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('martes', '12:00 m.');
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('martes', '1:00 p.m.');
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('martes', '2:00 p.m.');
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('martes', '3:00 p.m.');
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('martes', '4:00 p.m.');
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('martes', '5:00 p.m.');
+
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('miércoles', '9:00 a.m.');
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('miércoles', '10:00 a.m.');
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('miércoles', '11:00 a.m.');
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('miércoles', '12:00 m.');
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('miércoles', '1:00 p.m.');
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('miércoles', '2:00 p.m.');
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('miércoles', '3:00 p.m.');
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('miércoles', '4:00 p.m.');
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('miércoles', '5:00 p.m.');
+
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('jueves', '9:00 a.m.');
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('jueves', '10:00 a.m.');
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('jueves', '11:00 a.m.');
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('jueves', '12:00 m.');
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('jueves', '1:00 p.m.');
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('jueves', '2:00 p.m.');
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('jueves', '3:00 p.m.');
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('jueves', '4:00 p.m.');
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('jueves', '5:00 p.m.');
+
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('viernes', '9:00 a.m.');
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('viernes', '10:00 a.m.');
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('viernes', '11:00 a.m.');
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('viernes', '12:00 m.');
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('viernes', '1:00 p.m.');
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('viernes', '2:00 p.m.');
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('viernes', '3:00 p.m.');
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('viernes', '4:00 p.m.');
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('viernes', '5:00 p.m.');
+
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('sábado', '9:00 a.m.');
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('sábado', '10:00 a.m.');
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('sábado', '11:00 a.m.');
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('sábado', '12:00 m.');
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('sábado', '1:00 p.m.');
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('sábado', '2:00 p.m.');
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('sábado', '3:00 p.m.');
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('sábado', '4:00 p.m.');
+INSERT IGNORE INTO horarios (dia, hora) VALUES ('sábado', '5:00 p.m.');

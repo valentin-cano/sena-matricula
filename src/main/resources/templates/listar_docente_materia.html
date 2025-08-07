@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Docentes por Materia</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <div th:replace="~{fragments/navbar :: barra-navegacion}"></div>
+
+    <div class="container mt-5">
+        <h2 class="fw-bold mb-4">👩‍🏫 Listado de Docentes por Materia</h2>
+
+        <div class="mb-3">
+            <a th:href="@{/docentemateria/nuevo}" class="btn btn-primary">➕ Asignar Docente a Materia</a>
+        </div>
+
+        <div th:if="${docenteMateria == null or #lists.isEmpty(docenteMateria)}" class="alert alert-info" role="alert">
+            No hay asignaciones de docentes a materias registradas.
+        </div>
+
+        <div th:if="${docenteMateria != null and !#lists.isEmpty(docenteMateria)}">
+            <table class="table table-bordered align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th>#</th>
+                        <th>Docente</th>
+                        <th>Materia</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="dm, iterStat : ${docenteMateria}">
+                        <td th:text="${iterStat.count}">1</td>
+                        <td th:text="${dm.id_docente.nombre} + ' ' + ${dm.id_docente.apellidos}">Nombre del Docente</td>
+                        <td th:text="${dm.id_materia.nombre}">Nombre de la Materia</td>
+                        <td>
+                            <a th:href="@{/docentemateria/editar/{id}(id=${dm.id})}" class="btn btn-warning btn-sm me-2">Editar</a>
+                            <form th:action="@{/docentemateria/eliminar}" method="post" style="display:inline;" onsubmit="return confirm('¿Estás seguro de que quieres eliminar esta asignación?');">
+                                <input type="hidden" name="id" th:value="${dm.id}" />
+                                <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div th:replace="~{fragments/footer :: pie-pagina}"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

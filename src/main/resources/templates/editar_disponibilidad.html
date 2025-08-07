@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Disponibilidad</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <div th:replace="~{fragments/navbar :: barra-navegacion}"></div>
+
+    <div class="container mt-5">
+        <h2 class="fw-bold mb-4">✏️ Editar Disponibilidad</h2>
+
+        <div th:if="${disponibilidad == null}" class="alert alert-warning" role="alert">
+            No se encontró la disponibilidad a editar. Por favor regresa al listado.
+            <a th:href="@{/disponibilidad}" class="btn btn-sm btn-secondary ms-2">Volver</a>
+        </div>
+
+        <form th:if="${disponibilidad != null}" th:action="@{/disponibilidad/actualizar}" method="post" id="formEditarDisponibilidad">
+            <input type="hidden" name="id" th:value="${disponibilidad.id}" />
+
+            <div class="mb-3">
+                <label for="docente" class="form-label">Selecciona el Docente</label>
+                <select class="form-select" id="docente" name="id_docente" required>
+                    <option value="">-- Selecciona un Docente --</option>
+                    <option th:each="docente : ${docentes}"
+                            th:value="${docente.id}"
+                            th:text="${docente.nombre + ' ' + docente.apellidos}"
+                            th:selected="${disponibilidad.id_docente != null and docente.id == disponibilidad.id_docente.id}">
+                    </option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="horario" class="form-label">Selecciona el Horario</label>
+                <select class="form-select" id="horario" name="id_horario" required>
+                    <option value="">-- Selecciona un Horario --</option>
+                    <option th:each="horario : ${horarios}"
+                            th:value="${horario.id}"
+                            th:text="${horario.dia + ' - ' + horario.hora}"
+                            th:selected="${disponibilidad.id_horario != null and horario.id == disponibilidad.id_horario.id}">
+                    </option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label d-block">¿Disponible?</label>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="disponible" id="disponibleSi" value="1"
+                           th:checked="${disponibilidad.disponible == true}">
+                    <label class="form-check-label" for="disponibleSi">Sí</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="disponible" id="disponibleNo" value="0"
+                           th:checked="${disponibilidad.disponible == false}">
+                    <label class="form-check-label" for="disponibleNo">No</label>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-success">Actualizar</button>
+            <a th:href="@{/disponibilidad}" class="btn btn-secondary ms-2">Cancelar</a>
+        </form>
+    </div>
+
+    <div th:replace="~{fragments/footer :: pie-pagina}"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.getElementById("formEditarDisponibilidad")?.addEventListener("submit", function(event) {
+            const docente = document.getElementById("docente")?.value;
+            const horario = document.getElementById("horario")?.value;
+            if (!docente || !horario) {
+                alert("Docente y horario son obligatorios.");
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

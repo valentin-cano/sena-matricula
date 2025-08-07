@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.gozarte.matricula.entities.Alumno;
 import com.gozarte.matricula.entities.Materia;
 import com.gozarte.matricula.services.MateriaService;
 

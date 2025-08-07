@@ -8,10 +8,10 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "dias_horas")
-public class DiaHora {
+@Table(name = "horarios")
+public class Horario {
 
-@Id
+  @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
 private Long id;
 
