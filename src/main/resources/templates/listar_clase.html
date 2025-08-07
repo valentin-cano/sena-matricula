@@ -35,10 +35,10 @@
                 <tbody>
                     <tr th:each="clase, iterStat : ${clases}">
                         <td th:text="${iterStat.count}">1</td>
-                        <td th:text="${clase.alumno.nombre} + ' ' + ${clase.alumno.apellidos}">Nombre del Alumno</td>
-                        <td th:text="${clase.materia.nombre}">Nombre de la Materia</td>
-                        <td th:text="${clase.docente.nombre} + ' ' + ${clase.docente.apellidos}">Nombre del Docente</td>
-                        <td th:text="${clase.horario?.dia + ' - ' + clase.horario?.hora}">Horario de la Clase</td>
+                        <td th:text="${(clase.alumno?.nombre ?: '') + ' ' + (clase.alumno?.apellidos ?: '')}">Nombre del Alumno</td>
+                        <td th:text="${clase.materia?.nombre}">Nombre de la Materia</td>
+                        <td th:text="${(clase.docente?.nombre ?: '') + ' ' + (clase.docente?.apellidos ?: '')}">Nombre del Docente</td>
+                        <td th:text="${clase.disponibilidadHoraria?.id_horario?.dia + ' - ' + clase.disponibilidadHoraria?.id_horario?.hora}">Horario de la Clase</td>
                         <td>
                             <a th:href="@{/clase/editar/{id}(id=${clase.id})}" class="btn btn-warning btn-sm me-2">Editar</a>
                             <form th:action="@{/clase/eliminar}" method="post" style="display:inline;" onsubmit="return confirm('¿Estás seguro de que quieres eliminar esta clase?');">

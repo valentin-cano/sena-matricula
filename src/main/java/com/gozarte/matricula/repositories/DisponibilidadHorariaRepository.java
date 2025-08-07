@@ -11,10 +11,11 @@ import com.gozarte.matricula.entities.DisponibilidadHoraria;
 public interface DisponibilidadHorariaRepository extends JpaRepository<DisponibilidadHoraria, Long> {
 
 //Método personalizado para filtrar la tabla por los campos id_docente y disponibilidad
-
-    @Query(value = "SELECT * FROM horarios_disponibles_por_profesor WHERE id_docente = :docenteId AND disponible = true", 
+    
+    @Query(value = "SELECT * FROM horarios_disponibles_por_profesor WHERE id_docente = :docenteId AND disponible = 1", 
            nativeQuery = true)
     List<DisponibilidadHoraria> findAllByIdDocenteAndDisponible(@Param("docenteId") Long docenteId);
+
 
 
 }
