@@ -48,7 +48,7 @@ return "redirect:/materia/lista";
     return "editar_materia"; 
 }
 
-@DeleteMapping("/eliminar")
+@PostMapping("/eliminar")
 public String eliminarMateria(@RequestParam("seleccionado") Long id) {    
     materiaService.eliminarMateria(id);
     return "redirect:/materia/lista";

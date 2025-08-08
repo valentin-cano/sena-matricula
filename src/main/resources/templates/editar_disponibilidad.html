@@ -17,7 +17,7 @@
             <a th:href="@{/disponibilidad}" class="btn btn-sm btn-secondary ms-2">Volver</a>
         </div>
 
-        <form th:if="${disponibilidad != null}" th:action="@{/disponibilidad/actualizar}" method="post" id="formEditarDisponibilidad">
+        <form th:if="${disponibilidad != null}" th:action="@{/disponibilidad/guardar}" method="post" id="formEditarDisponibilidad">
             <input type="hidden" name="id" th:value="${disponibilidad.id}" />
 
             <div class="mb-3">
