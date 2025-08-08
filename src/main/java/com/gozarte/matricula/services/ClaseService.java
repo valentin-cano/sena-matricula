@@ -32,7 +32,11 @@ public void editarClase(Clase clase) {
 claseRepository.save(clase);
 }
 
-    
+     public Clase obtenerPorId(Long idClase) {
+        return claseRepository.findById(idClase)
+                .orElse(null); // o puedes lanzar una excepción si prefieres
+    }
+   
 
 
 

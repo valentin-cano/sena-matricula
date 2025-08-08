@@ -45,7 +45,23 @@ public void eliminarDisponibilidad(Long id) {
 disponibilidadHorariaRepository.deleteById(id);
 }
 
-    public void marcarComoNoDisponible(Long idDisponibilidad) {
+
+public List<DisponibilidadHoraria> obtenerDisponibilidadPorDocenteId(Long docenteId) {
+    return disponibilidadHorariaRepository.findAllByIdDocenteAndDisponible(docenteId);
+}
+
+public void marcarComoDisponible(Long idDisponibilidad) {
+        Optional<DisponibilidadHoraria> disponibilidadOpt = disponibilidadHorariaRepository.findById(idDisponibilidad);
+        if (disponibilidadOpt.isPresent()) {
+            DisponibilidadHoraria disponibilidad = disponibilidadOpt.get();
+            disponibilidad.setDisponible(true);
+            disponibilidadHorariaRepository.save(disponibilidad);
+        } else {
+            throw new RuntimeException("No se encontró la disponibilidad con ID: " + idDisponibilidad);
+        }
+    }
+
+public void marcarComoNoDisponible(Long idDisponibilidad) {
         Optional<DisponibilidadHoraria> disponibilidadOpt = disponibilidadHorariaRepository.findById(idDisponibilidad);
         if (disponibilidadOpt.isPresent()) {
             DisponibilidadHoraria disponibilidad = disponibilidadOpt.get();
@@ -56,8 +72,7 @@ disponibilidadHorariaRepository.deleteById(id);
         }
     }
 
-public List<DisponibilidadHoraria> obtenerDisponibilidadPorDocenteId(Long docenteId) {
-    return disponibilidadHorariaRepository.findAllByIdDocenteAndDisponible(docenteId);
-}
+
+
 
 }

@@ -72,23 +72,33 @@ return "listar_clase";
         return "listar_clase"; 
     }
 
-    @PostMapping("/eliminar")
-    public String eliminarClase(@RequestParam Long idClase) {
-        claseService.eliminarClase(idClase);
-        return "redirect:/clase/lista";
+@PostMapping("/eliminar")
+public String eliminarClase(@RequestParam Long idClase) {
+    // 1. Obtener la clase antes de eliminarla
+    Clase clase = claseService.obtenerPorId(idClase);
+
+    if (clase != null && clase.getDisponibilidadHoraria() != null) {
+        // 2. Obtener el ID de la disponibilidad asociada
+        Long idDisponibilidad = clase.getDisponibilidadHoraria().getId();
+
+        // 3. Marcar como disponible
+        disponibilidadHorariaService.marcarComoDisponible(idDisponibilidad);
     }
+
+    // 4. Eliminar la clase
+    claseService.eliminarClase(idClase);
+
+    return "redirect:/clase/lista";
+}
 
     @PostMapping("/guardar")
 public String guardarClase(@ModelAttribute Clase clase) {
     // Guardamos la clase
     claseService.guardarClase(clase);
-
     // Obtener el ID de la disponibilidad seleccionada en el formulario
     Long idDisponibilidadSeleccionada = clase.getDisponibilidadHoraria().getId();
-
     // Marcar esa disponibilidad como no disponible
     disponibilidadHorariaService.marcarComoNoDisponible(idDisponibilidadSeleccionada);
-
     return "redirect:/clase/lista";
 }
 
