@@ -40,7 +40,6 @@
                         <td th:text="${(clase.docente?.nombre ?: '') + ' ' + (clase.docente?.apellidos ?: '')}">Nombre del Docente</td>
                         <td th:text="${clase.disponibilidadHoraria?.id_horario?.dia + ' - ' + clase.disponibilidadHoraria?.id_horario?.hora}">Horario de la Clase</td>
                         <td>
-                            <a th:href="@{/clase/editar/{id}(id=${clase.id})}" class="btn btn-warning btn-sm me-2">Editar</a>
                             <form th:action="@{/clase/eliminar}" method="post" style="display:inline;" onsubmit="return confirm('¿Estás seguro de que quieres eliminar esta clase?');">
                                 <input type="hidden" name="idClase" th:value="${clase.id}" />
                                 <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
